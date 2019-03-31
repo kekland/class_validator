@@ -1,0 +1,3 @@
+bool validate(dynamic object) {
+  
+}
