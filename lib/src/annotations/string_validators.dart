@@ -3,9 +3,9 @@ import 'package:validators/validators.dart' as validator;
 import 'package:validators/sanitizers.dart' as sanitizer;
 
 class Contains implements Validator {
-  String what;
+  final String what;
 
-  Contains(this.what);
+  const Contains(this.what);
 
   @override
   bool validate(object, field) {
@@ -17,9 +17,9 @@ class Contains implements Validator {
 }
 
 class NotContains implements Validator {
-  String what;
+  final String what;
 
-  NotContains(this.what);
+  const NotContains(this.what);
 
   @override
   bool validate(object, field) {
@@ -31,6 +31,8 @@ class NotContains implements Validator {
 }
 
 class IsAlphabetic implements Validator {
+  const IsAlphabetic();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -41,6 +43,8 @@ class IsAlphabetic implements Validator {
 }
 
 class IsAlphanumeric implements Validator {
+  const IsAlphanumeric();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -51,6 +55,8 @@ class IsAlphanumeric implements Validator {
 }
 
 class IsAscii implements Validator {
+  const IsAscii();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -61,6 +67,8 @@ class IsAscii implements Validator {
 }
 
 class IsBase64 implements Validator {
+  const IsBase64();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -71,6 +79,8 @@ class IsBase64 implements Validator {
 }
 
 class IsCreditCard implements Validator {
+  const IsCreditCard();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -81,6 +91,8 @@ class IsCreditCard implements Validator {
 }
 
 class IsEmail implements Validator {
+  const IsEmail();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -91,10 +103,10 @@ class IsEmail implements Validator {
 }
 
 class IsFullyQualifiedDomainName implements Validator {
-  bool requireTld;
-  bool allowUnderscores;
+  final bool requireTld;
+  final bool allowUnderscores;
 
-  IsFullyQualifiedDomainName({this.requireTld = true, this.allowUnderscores = false});
+  const IsFullyQualifiedDomainName({this.requireTld = true, this.allowUnderscores = false});
 
   @override
   bool validate(object, field) {
@@ -106,6 +118,8 @@ class IsFullyQualifiedDomainName implements Validator {
 }
 
 class HasFullWidth implements Validator {
+  const HasFullWidth();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -116,6 +130,8 @@ class HasFullWidth implements Validator {
 }
 
 class HasHalfWidth implements Validator {
+  const HasHalfWidth();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -126,6 +142,8 @@ class HasHalfWidth implements Validator {
 }
 
 class IsHexColor implements Validator {
+  const IsHexColor();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -136,6 +154,8 @@ class IsHexColor implements Validator {
 }
 
 class IsHexadecimalNumber implements Validator {
+  const IsHexadecimalNumber();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -146,9 +166,9 @@ class IsHexadecimalNumber implements Validator {
 }
 
 class IsIP implements Validator {
-  int v;
+  final int v;
 
-  IsIP({this.v});
+  const IsIP({this.v});
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -159,9 +179,9 @@ class IsIP implements Validator {
 }
 
 class IsISBN implements Validator {
-  int v;
+  final int v;
 
-  IsISBN({this.v});
+  const IsISBN({this.v});
 
   @override
   bool validate(object, field) {
@@ -173,6 +193,8 @@ class IsISBN implements Validator {
 }
 
 class IsJson implements Validator {
+  const IsJson();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -183,6 +205,8 @@ class IsJson implements Validator {
 }
 
 class IsLowercase implements Validator {
+  const IsLowercase();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -193,6 +217,7 @@ class IsLowercase implements Validator {
 }
 
 class IsMongoId implements Validator {
+  const IsMongoId();
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -203,6 +228,8 @@ class IsMongoId implements Validator {
 }
 
 class HasMultibyte implements Validator {
+  const HasMultibyte();
+
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -213,9 +240,9 @@ class HasMultibyte implements Validator {
 }
 
 class IsStringInLengthRange implements Validator {
-  int min;
-  int max;
-  IsStringInLengthRange({this.min, this.max});
+  final int min;
+  final int max;
+  const IsStringInLengthRange({this.min, this.max});
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -226,9 +253,9 @@ class IsStringInLengthRange implements Validator {
 }
 
 class IsStringLengthNotLessThan implements Validator {
-  int value;
+  final int value;
 
-  IsStringLengthNotLessThan(this.value);
+  const IsStringLengthNotLessThan(this.value);
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -239,9 +266,9 @@ class IsStringLengthNotLessThan implements Validator {
 }
 
 class IsStringLengthNotMoreThan implements Validator {
-  int value;
+  final int value;
 
-  IsStringLengthNotMoreThan(this.value);
+  const IsStringLengthNotMoreThan(this.value);
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -252,9 +279,9 @@ class IsStringLengthNotMoreThan implements Validator {
 }
 
 class Matches implements Validator {
-  RegExp pattern;
+  final RegExp pattern;
 
-  Matches({this.pattern});
+  const Matches({this.pattern});
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -265,6 +292,7 @@ class Matches implements Validator {
 }
 
 class IsUUID implements Validator {
+  const IsUUID();
   @override
   bool validate(object, field) {
     if (field is String) {
@@ -275,6 +303,7 @@ class IsUUID implements Validator {
 }
 
 class IsURL implements Validator {
+  const IsURL();
   @override
   bool validate(object, field) {
     if (field is String) {
