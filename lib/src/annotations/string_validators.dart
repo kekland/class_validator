@@ -2,13 +2,6 @@ import 'package:class_validator/src/annotations/base_validator.dart';
 import 'package:validators/validators.dart' as validator;
 import 'package:validators/sanitizers.dart' as sanitizer;
 
-class IsString implements Validator {
-  @override
-  bool validate(object, field) {
-    return field is String;
-  }
-}
-
 class Contains implements Validator {
   String what;
 
