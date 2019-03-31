@@ -1,0 +1,13 @@
+name: class_validator
+description: A Dart library for validating classes using reflection (dart:mirrors). Does not support Flutter.
+homepage: https://github.com/kekland/class_validator
+version: 0.0.0
+author: Erzhan <kk.erzhan@gmail.com>
+repository: https://github.com/kekland/class_validator
+issue_tracker: https://github.com/kekland/class_validator/issues
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+
+dev_dependencies:
+  test:
